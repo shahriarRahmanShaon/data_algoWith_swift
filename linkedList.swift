@@ -16,6 +16,17 @@ public class LinkedList<T> {
         }
         return node
     }
+    // printing what inside the nodes
+    public var printMyNodes: String{
+        var stringArray = "["
+        guard var node = head else{return stringArray + "]"}
+        while let next = node.nextNode{
+            stringArray += "\(node.value),"
+            node = next
+        }
+        stringArray += "\(node.value)"
+        return stringArray + "]"
+    }
     
     public func append(value: T) {
         let newNode = Lnode(value: value)
